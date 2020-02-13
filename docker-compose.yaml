@@ -17,3 +17,13 @@ services:
       POSTGRES_DB: pgdb
     ports:
       - 5432:5432
+  ts:
+    image: teamspeak:3.10
+    environment:
+      TS3SERVER_LICENSE: accept
+    command: ts3server serveradmin_password=tspass
+    ports:
+      - 9987:9987/udp
+      - 10011:10011
+      - 30033:30033
+# $ docker run -p 9987:9987/udp -p 10011:10011 -p 30033:30033 -e TS3SERVER_LICENSE=accept teamspeak

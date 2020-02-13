@@ -20,6 +20,13 @@ const config = {
   web: {
     port: env.WEB_PORT,
   },
+  teamspeak: {
+    user: env.TS_USER,
+    password: env.TS_PASS,
+    host: env.TS_HOST,
+    port: env.TS_PORT,
+    queryPort: env.TS_QUERY_PORT,
+  },
   ready: false,
   setReadyState: (state) => {
     this.ready = state;

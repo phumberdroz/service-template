@@ -5,6 +5,7 @@ const bodyParser = require('koa-bodyparser');
 const routes = require('./routes');
 const models = require('./models');
 const config = require('./config');
+const ts = require('./utils/ts');
 
 class Server {
   constructor() {
@@ -36,6 +37,7 @@ if (!module.parent) {
     try {
       await Promise.all([
         models.sequelize.authenticate(),
+        ts.connect(),
         app.listen(config.web.port),
       ]);
       if (process.send) process.send('ready');

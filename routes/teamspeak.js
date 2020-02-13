@@ -1,8 +1,8 @@
 const Router = require('@koa/router');
 
-const router = new Router({ prefix: '/v1/hello-world' });
+const router = new Router({ prefix: '/v1/teamspeak' });
 
-router.get('/', (ctx) => {
+router.post('/message/:userId', (ctx) => {
   ctx.body = 'hello world';
 });
 
